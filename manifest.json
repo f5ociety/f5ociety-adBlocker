@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
 
-    "name": "TunnelBear Blocker",
+    "name": "Blocker",
     "version": "1.0.1",
 
     "default_locale": "en",
@@ -17,11 +17,11 @@
             "16": "img/icon_16-off.png",
             "32": "img/icon_32-off.png"
         },
-        "default_title": "TunnelBear Blocker",
+        "default_title": "Blocker",
         "default_popup": "popup.html"
     },
 
-    "author": "TunnelBear",
+    "author": "f5ociety",
     "background": {
         "page": "background.html"
     },
@@ -72,5 +72,5 @@
         "js/blockbear-contentscript-inject.js",
         "/web_accessible_resources/*"
     ],
-    "short_name": "TunnelBear Blocker"
+    "short_name": "Blocker"
 }
