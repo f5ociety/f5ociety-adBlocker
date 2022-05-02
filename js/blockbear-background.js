@@ -109,11 +109,4 @@ vAPI.storage.get(['installDate', 'promoReferenceDate'], function (result) {
   }
 });
 
-/******************************************************************************/
-
-let browserObj = (bb.browserType === "firefox") ? browser : chrome;
-browserObj.runtime.setUninstallURL("https://www.tunnelbear.com/account#/feedback/blocker");
-
-/******************************************************************************/
-
 })();
