@@ -1,5 +1,5 @@
 # f5ociety Blocker (TunnelBear Blocker fork)
-![Logo](./TunnelBearBlocker.JPG)
+![Logo](./img/TunnelBearBlocker.JPG)
 
 **Fork** блокировщика рекламы от производителя VPN сервиса **TunnelBear**. В котором мы сделали упор на скорость и актуальность технологий.
 
