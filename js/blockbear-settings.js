@@ -107,11 +107,6 @@ function SettingsViewModel(settingsData) {
     messager.send('blockbearSettings', { what: 'toggleBlockEmail' });
     this.reload = true;
   };
-  this.toggleBlockWebRTC = function () {
-    this.settingsBlockWebRTCEnabled(!this.settingsBlockWebRTCEnabled());
-    messager.send('blockbearSettings', { what: 'toggleBlockWebRTC' });
-    this.reload = true;
-  };
   this.toggleBlockerBadgeAnimation = function () {
     this.settingsBlockerBadgeAnimationEnabled(!this.settingsBlockerBadgeAnimationEnabled());
     messager.send('blockbearSettings', { what: 'toggleBlockerBadgeAnimation' });
@@ -159,3 +154,4 @@ if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 /******************************************************************************/
 
 })();
+
