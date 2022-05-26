@@ -3,7 +3,7 @@
 /******************************************************************************/
 
 var messager = vAPI.messaging;
-messager.addChannelListener('blockbearSettings');
+messager.addChannelListener('fblockerSettings');
 
 /******************************************************************************/
 
@@ -11,7 +11,7 @@ var getSettingsData = function (callback) {
   var onDataReceived = function (response) {
     callback(response);
   };
-  messager.send('blockbearSettings', { what: 'getSettingsData' }, onDataReceived);
+  messager.send('fblockerSettings', { what: 'getSettingsData' }, onDataReceived);
 };
 
 function SettingsViewModel(settingsData) {
@@ -72,51 +72,51 @@ function SettingsViewModel(settingsData) {
     var self = this;
     this.settingsBlockAdsEnabled(!this.settingsBlockAdsEnabled());
     setTimeout(function () {
-      messager.send('blockbearSettings', { what: 'toggleBlockAds' }, function () {
+      messager.send('fblockerSettings', { what: 'toggleBlockAds' }, function () {
         self.reload = true;
       });
     }, 500);
   };
   this.toggleFlash = function () {
     this.settingsFlashEnabled(!this.settingsFlashEnabled());
-    messager.send('blockbearSettings', { what: 'toggleFlash' });
+    messager.send('fblockerSettings', { what: 'toggleFlash' });
     this.reload = true;
   };
   this.toggleBrowserFingerprinting = function () {
     this.settingsBrowserFingerprintingEnabled(!this.settingsBrowserFingerprintingEnabled());
-    messager.send('blockbearSettings', { what: 'toggleBrowserFingerprinting' });
+    messager.send('fblockerSettings', { what: 'toggleBrowserFingerprinting' });
     this.reload = true;
   };
   this.toggleBlockMicrophone = function () {
     this.settingsBlockMicrophoneEnabled(!this.settingsBlockMicrophoneEnabled());
-    messager.send('blockbearSettings', { what: 'toggleBlockMicrophone' });
+    messager.send('fblockerSettings', { what: 'toggleBlockMicrophone' });
     this.reload = true;
   };
   this.toggleBlockKeyboard = function () {
     this.settingsBlockKeyboardEnabled(!this.settingsBlockKeyboardEnabled());
-    messager.send('blockbearSettings', { what: 'toggleBlockKeyboard' });
+    messager.send('fblockerSettings', { what: 'toggleBlockKeyboard' });
     this.reload = true;
   };
   this.toggleBlockMouse = function () {
     this.settingsBlockMouseEnabled(!this.settingsBlockMouseEnabled());
-    messager.send('blockbearSettings', { what: 'toggleBlockMouse' });
+    messager.send('fblockerSettings', { what: 'toggleBlockMouse' });
     this.reload = true;
   };
   this.toggleBlockEmail = function () {
     this.settingsBlockEmailEnabled(!this.settingsBlockEmailEnabled());
-    messager.send('blockbearSettings', { what: 'toggleBlockEmail' });
+    messager.send('fblockerSettings', { what: 'toggleBlockEmail' });
     this.reload = true;
   };
   this.toggleBlockerBadgeAnimation = function () {
     this.settingsBlockerBadgeAnimationEnabled(!this.settingsBlockerBadgeAnimationEnabled());
-    messager.send('blockbearSettings', { what: 'toggleBlockerBadgeAnimation' });
+    messager.send('fblockerSettings', { what: 'toggleBlockerBadgeAnimation' });
     this.reload = true;
   };
   this.toggleSocial = function () {
     var self = this;
     this.settingsSocialEnabled(!this.settingsSocialEnabled());
     setTimeout(function () {
-      messager.send('blockbearSettings', { what: 'toggleSocial' }, function () {
+      messager.send('fblockerSettings', { what: 'toggleSocial' }, function () {
         self.reload = true;
       });
     }, 500);
@@ -125,7 +125,7 @@ function SettingsViewModel(settingsData) {
     var self = this;
     this.settingsPrivacyEnabled(!this.settingsPrivacyEnabled());
     setTimeout(function () {
-      messager.send('blockbearSettings', { what: 'togglePrivacy' }, function () {
+      messager.send('fblockerSettings', { what: 'togglePrivacy' }, function () {
         self.reload = true;
       });
     }, 500);
@@ -134,7 +134,7 @@ function SettingsViewModel(settingsData) {
     var self = this;
     this.settingsMalwareEnabled(!this.settingsMalwareEnabled());
     setTimeout(function () {
-      messager.send('blockbearSettings', { what: 'toggleMalware' }, function () {
+      messager.send('fblockerSettings', { what: 'toggleMalware' }, function () {
         self.reload = true;
       });
     }, 500);

@@ -42,7 +42,7 @@ var iconAnimations = [];
 var iconAnimated = false;
 
 vAPI.setIcon = function (tabId, iconStatus, badge) {
-  if (µb.blockbear.settings.blockerBadgeAnimationEnabled === false) {
+  if (µb.fblocker.settings.blockerBadgeAnimationEnabled === false) {
     chrome.browserAction.setIcon({ path: ICON_PATHS['on'] });
     return;
   }
@@ -133,7 +133,7 @@ vAPI.setIcon = function (tabId, iconStatus, badge) {
     var badge = '';
 
     var pageStore = this.pageStoreFromTabId(tabId);
-    var blockedCounts = this.blockbear.getBlockedCounts(tabId);
+    var blockedCounts = this.fblocker.getBlockedCounts(tabId);
     if (pageStore !== null) {
       state = pageStore.getNetFilteringSwitch();
       if (state && this.userSettings.showIconBadge) {

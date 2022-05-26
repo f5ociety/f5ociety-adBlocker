@@ -8,7 +8,7 @@
 /******************************************************************************/
 
 var µb = µBlock;
-let bb = µb.blockbear;
+let bb = µb.fblocker;
 
 /******************************************************************************/
 
@@ -31,7 +31,7 @@ var onMessage = function (request, sender, callback) {
   switch (request.what) {
     case 'blockFlash':
       response = {
-        result: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.blockBearEnabled && bb.settings.flashbearEnabled
+        result: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.fblockerEnabled && bb.settings.flashbearEnabled
       };
       break;
     case 'incrementFlashCount':
@@ -45,7 +45,7 @@ var onMessage = function (request, sender, callback) {
       }
       break;
     case 'blockEmailEnabled':
-      response = bb.settings.blockEmailEnabled && bb.settings.blockBearEnabled;
+      response = bb.settings.blockEmailEnabled && bb.settings.fblockerEnabled;
       break;
     case 'pixel-tracking':
       blockedCounts.emailBlocked++
@@ -58,7 +58,7 @@ var onMessage = function (request, sender, callback) {
   callback(response);
 };
 
-vAPI.messaging.listen('blockbear-contentscript-end.js', onMessage);
+vAPI.messaging.listen('fblocker-contentscript-end.js', onMessage);
 
 })();
 
@@ -70,7 +70,7 @@ vAPI.messaging.listen('blockbear-contentscript-end.js', onMessage);
 /******************************************************************************/
 
 var µb = µBlock;
-let bb = µb.blockbear;
+let bb = µb.fblocker;
 
 /******************************************************************************/
 
@@ -93,10 +93,10 @@ var onMessage = function (request, sender, callback) {
   switch (request.what) {
     case 'blockBrowserFingerprinting':
       response = {
-        blockFingerprinting: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.blockBearEnabled && bb.settings.blockBrowserFingerprintingEnabled,
-        blockMicrophone: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.blockBearEnabled && bb.settings.blockMicrophoneEnabled,
-        blockKeyboard: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.blockBearEnabled && bb.settings.blockKeyboardEnabled,
-        blockMouse: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.blockBearEnabled && bb.settings.blockMouseEnabled,
+        blockFingerprinting: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.fblockerEnabled && bb.settings.blockBrowserFingerprintingEnabled,
+        blockMicrophone: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.fblockerEnabled && bb.settings.blockMicrophoneEnabled,
+        blockKeyboard: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.fblockerEnabled && bb.settings.blockKeyboardEnabled,
+        blockMouse: pageStore && pageStore.getNetFilteringSwitch() && bb.settings.fblockerEnabled && bb.settings.blockMouseEnabled,
       };
       if (!response.blockFingerprinting && blockedCounts.fingerprintingBlocked > 0) {
         blockedCounts.fingerprintingBlocked = 0;
@@ -165,7 +165,7 @@ var onMessage = function (request, sender, callback) {
   callback(response);
 };
 
-vAPI.messaging.listen('blockbear-contentscript-start.js', onMessage);
+vAPI.messaging.listen('fblocker-contentscript-start.js', onMessage);
 
 })();
 
@@ -177,7 +177,7 @@ vAPI.messaging.listen('blockbear-contentscript-start.js', onMessage);
 /******************************************************************************/
 
 var µb = µBlock;
-let bb = µb.blockbear;
+let bb = µb.fblocker;
 
 /******************************************************************************/
 
@@ -191,7 +191,7 @@ let getPopupData = function (tabId) {
     pageDomain: tabContext.rootDomain,
 
     // Toggles
-    blockBearEnabled: bb.settings.blockBearEnabled,
+    fblockerEnabled: bb.settings.fblockerEnabled,
     netFilteringSwitch: false,
     blockAdsEnabled: bb.settings.blockAdsEnabled,
     flashbearEnabled: bb.settings.flashbearEnabled,
@@ -259,8 +259,8 @@ var onMessage = function (request, sender, callback) {
   var response;
   
   switch ( request.what ) {
-    case 'toggleBlockBear':
-      bb.settings.blockBearEnabled = !bb.settings.blockBearEnabled;
+    case 'togglefblocker':
+      bb.settings.fblockerEnabled = !bb.settings.fblockerEnabled;
       bb.updateFilters();
       break;
     case 'toggleDomainWhitelist':
@@ -314,7 +314,7 @@ var onMessage = function (request, sender, callback) {
   callback(response);
 }
 
-vAPI.messaging.listen('blockbearPopup', onMessage);
+vAPI.messaging.listen('fblockerPopup', onMessage);
 
 })();
 
@@ -326,7 +326,7 @@ vAPI.messaging.listen('blockbearPopup', onMessage);
 /******************************************************************************/
 
 var µb = µBlock;
-let bb = µb.blockbear;
+let bb = µb.fblocker;
 
 /******************************************************************************/
 
@@ -389,6 +389,6 @@ let onMessage = function (request, sender, callback) {
   callback(response)
 }
 
-vAPI.messaging.listen('blockbearSettings', onMessage);
+vAPI.messaging.listen('fblockerSettings', onMessage);
 
 })();

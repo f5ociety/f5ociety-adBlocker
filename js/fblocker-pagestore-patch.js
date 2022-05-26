@@ -19,7 +19,7 @@ let originalFactory = µb.PageStore.factory
   let originalNetFilteringSwitch = prototype.getNetFilteringSwitch
   
   prototype.getNetFilteringSwitch = function () {
-    let globalToggle = µb.blockbear.settings.blockBearEnabled;
+    let globalToggle = µb.fblocker.settings.fblockerEnabled;
     return globalToggle && originalNetFilteringSwitch.call(this);
   }
 

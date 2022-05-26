@@ -4,7 +4,7 @@
 /******************************************************************************/
 
 var µb = µBlock;
-let bb = µb.blockbear
+let bb = µb.fblocker
 
 /******************************************************************************/
 
@@ -68,7 +68,7 @@ let getFilterListsToSelect = function (globalToggle, blockAds, blockPrivacy, blo
 }
 
 bb.updateFilters = function () {
-  let globalToggle = bb.settings.blockBearEnabled;
+  let globalToggle = bb.settings.fblockerEnabled;
   let blockAds = bb.settings.blockAdsEnabled;
   let blockPrivacy = bb.settings.blockPrivacyEnabled;
   let blockMalware = bb.settings.blockMalwareEnabled;

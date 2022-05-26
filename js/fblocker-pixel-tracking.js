@@ -3,7 +3,7 @@
     // from PixelBlock
     
     var proxyPattern = 'googleusercontent.com/proxy';
-    var imgSafe = '?blockbear=img-safe#';
+    var imgSafe = '?fblocker=img-safe#';
 
     var blacklist = [
         {name:'HubSpot',        pattern:'t.signaux',               url:'http://getsidekick.com'},
@@ -93,9 +93,9 @@
         // if blacklisted, hide image (ie. prevent the tracking img from loading)
         if (blacklisted) {
             img.style.display = 'none';
-            if (img.className.indexOf('blockbear-img-tracking') == -1) {
-                img.className = img.className.replace('blockbear-img-safe', '') + ' blockbear-img-tracking';
-                window.top.postMessage({ message: 'pixel-tracking', source: 'blockbear-pixel-tracking' }, '*');
+            if (img.className.indexOf('fblocker-img-tracking') == -1) {
+                img.className = img.className.replace('fblocker-img-safe', '') + ' fblocker-img-tracking';
+                window.top.postMessage({ message: 'pixel-tracking', source: 'fblocker-pixel-tracking' }, '*');
             }
         }
         return blacklisted;
@@ -112,8 +112,8 @@
                 img.src = img.src.replace('#', imgSafe);
             }
         }
-        if (img.className.indexOf('blockbear-img-safe') == -1) {
-            img.className = img.className.replace('blockbear-img-tracking', '') + ' blockbear-img-safe';
+        if (img.className.indexOf('fblocker-img-safe') == -1) {
+            img.className = img.className.replace('fblocker-img-tracking', '') + ' fblocker-img-safe';
         }
     }
 

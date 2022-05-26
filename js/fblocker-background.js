@@ -5,15 +5,15 @@
 /******************************************************************************/
 
 var µb = µBlock;
-if (µb.blockbear === undefined) {
-  µb.blockbear = {}
+if (µb.fblocker === undefined) {
+  µb.fblocker = {}
 }
-var bb = µb.blockbear;
+var bb = µb.fblocker;
 
 /******************************************************************************/
 
 bb.settings = {
-  blockBearEnabled: true,
+  fblockerEnabled: true,
   blockAdsEnabled: true,
   flashbearEnabled: true,
   blockBrowserFingerprintingEnabled: true,
@@ -35,7 +35,7 @@ bb.browserType = (window.navigator.userAgent.indexOf("Firefox") > -1) ? "firefox
 /******************************************************************************/
 
 bb.loadSettingsFromStorage = function (callback) {
-  let settingsKey = 'blockbearSettings'
+  let settingsKey = 'fblockerSettings'
   vAPI.storage.get(settingsKey, function (result) {
     if (settingsKey in result) {
       let settings = result[settingsKey]
@@ -50,7 +50,7 @@ bb.loadSettingsFromStorage = function (callback) {
 }
 
 bb.saveSettingsToStorage = function () {
-  vAPI.storage.set({ blockbearSettings: bb.settings });
+  vAPI.storage.set({ fblockerSettings: bb.settings });
 }
 
 /******************************************************************************/

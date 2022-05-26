@@ -13,10 +13,10 @@ if (!vAPI) {
 }
 
 var messager = vAPI.messaging;
-messager.addChannelListener('blockbear-contentscript-end.js');
+messager.addChannelListener('fblocker-contentscript-end.js');
 window.addEventListener('message', function (event) {
-  if (event && event.data && event.data.source == 'blockbear-pixel-tracking') {
-    messager.send('blockbear-contentscript-end.js', { what: 'pixel-tracking' });
+  if (event && event.data && event.data.source == 'fblocker-pixel-tracking') {
+    messager.send('fblocker-contentscript-end.js', { what: 'pixel-tracking' });
   }
 });
 
@@ -119,7 +119,7 @@ window.addEventListener('message', function (event) {
     // Delay sending message because of count synchronization issues
     // see https://tbears.atlassian.net/browse/TB-12402
     setTimeout(function () {
-      messager.send('blockbear-contentscript-end.js', { what: 'incrementFlashCount' });
+      messager.send('fblocker-contentscript-end.js', { what: 'incrementFlashCount' });
     }, 1000);
   }
 
@@ -133,11 +133,11 @@ window.addEventListener('message', function (event) {
   var unblockFlashElement = function (element) {
     element.classList.add("tb-unlock");
     element.style.display = "";
-    messager.send('blockbear-contentscript-end.js', { what: 'decrementFlashCount' });
+    messager.send('fblocker-contentscript-end.js', { what: 'decrementFlashCount' });
   }
 
   var applyFlashbear = function () {
-    messager.send('blockbear-contentscript-end.js', {
+    messager.send('fblocker-contentscript-end.js', {
       what: 'blockFlash'
     }, function (response) {
       if (response && response.result) {
@@ -155,12 +155,12 @@ window.addEventListener('message', function (event) {
   }
 })();
 
-messager.send('blockbear-contentscript-end.js', {
+messager.send('fblocker-contentscript-end.js', {
   what: 'blockEmailEnabled'
 }, function (response) {
   if (response) {
     var sm = document.createElement('script');
-    sm.src = chrome.extension.getURL('js/blockbear-pixel-tracking.js');
+    sm.src = chrome.extension.getURL('js/fblocker-pixel-tracking.js');
     document.getElementsByTagName('body')[0].appendChild(sm);
   }
 });

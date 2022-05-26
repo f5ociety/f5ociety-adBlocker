@@ -2,13 +2,13 @@
 
 var messager = vAPI.messaging;
 messager.addChannelListener('popupPanel');
-messager.addChannelListener('blockbearPopup');
+messager.addChannelListener('fblockerPopup');
 
 var getPopupData = function (callback) {
   var onDataReceived = function (response) {
     callback(response);
   };
-  messager.send('blockbearPopup', { what: 'getPopupData' }, onDataReceived);
+  messager.send('fblockerPopup', { what: 'getPopupData' }, onDataReceived);
 }
 
 function PopupViewModel(popupData) {
@@ -111,7 +111,7 @@ function PopupViewModel(popupData) {
     return chrome.i18n.getMessage("popupBlocked")
   }, this);
 
-  this.isToggled = ko.observable(popupData.blockBearEnabled);
+  this.isToggled = ko.observable(popupData.fblockerEnabled);
   this.isWhitelisted = ko.observable(popupData.netFilteringSwitch);
 
   this.blockAdsEnabled = ko.observable(popupData.blockAdsEnabled);
@@ -285,7 +285,7 @@ function PopupViewModel(popupData) {
     url: blockerBaseURL + '#ads',
     onClick: function () {
       self.blockAdsEnabled(!self.blockAdsEnabled());
-      messager.send('blockbearPopup', { what: 'toggleBlockAds' });
+      messager.send('fblockerPopup', { what: 'toggleBlockAds' });
       setTimeout(function () {
         messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
       }, 500);
@@ -300,7 +300,7 @@ function PopupViewModel(popupData) {
     url: blockerBaseURL + '#flash',
     onClick: function () {
       self.flashEnabled(!self.flashEnabled());
-      messager.send('blockbearPopup', { what: 'toggleFlash' });
+      messager.send('fblockerPopup', { what: 'toggleFlash' });
       messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
     }
   },
@@ -314,7 +314,7 @@ function PopupViewModel(popupData) {
   //   url: blockerBaseURL + '#fingerprinting',
   //   onClick: function () {
   //     self.browserFingerprintingEnabled(!self.browserFingerprintingEnabled());
-  //     messager.send('blockbearPopup', { what: 'toggleBrowserFingerprinting' });
+  //     messager.send('fblockerPopup', { what: 'toggleBrowserFingerprinting' });
   //     messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
   //   }
   // },
@@ -328,7 +328,7 @@ function PopupViewModel(popupData) {
     url: blockerBaseURL + '#email-tracking',
     onClick: function () {
       self.blockEmailEnabled(!self.blockEmailEnabled());
-      messager.send('blockbearPopup', { what: 'toggleBlockEmail' });
+      messager.send('fblockerPopup', { what: 'toggleBlockEmail' });
       messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
     }
   },
@@ -370,7 +370,7 @@ function PopupViewModel(popupData) {
     url: blockerBaseURL + '#ultrasonic-tracking',
     onClick: function () {
       self.blockMicrophoneEnabled(!self.blockMicrophoneEnabled());
-      messager.send('blockbearPopup', { what: 'toggleBlockMicrophone' });
+      messager.send('fblockerPopup', { what: 'toggleBlockMicrophone' });
       messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
     }
   }, {
@@ -383,7 +383,7 @@ function PopupViewModel(popupData) {
     url: blockerBaseURL + '#soc-buttons',
     onClick: function () {
       self.socialEnabled(!self.socialEnabled());
-      messager.send('blockbearPopup', { what: 'toggleSocial' });
+      messager.send('fblockerPopup', { what: 'toggleSocial' });
       setTimeout(function () {
         messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
       }, 500);
@@ -398,7 +398,7 @@ function PopupViewModel(popupData) {
     url: blockerBaseURL + '#scripts-trackers',
     onClick: function () {
       self.privacyEnabled(!self.privacyEnabled());
-      messager.send('blockbearPopup', { what: 'togglePrivacy' });
+      messager.send('fblockerPopup', { what: 'togglePrivacy' });
       setTimeout(function () {
         messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
       }, 500);
@@ -413,7 +413,7 @@ function PopupViewModel(popupData) {
     url: blockerBaseURL + '#malware',
     onClick: function () {
       self.malwareEnabled(!self.malwareEnabled());
-      messager.send('blockbearPopup', { what: 'toggleMalware' });
+      messager.send('fblockerPopup', { what: 'toggleMalware' });
       setTimeout(function () {
         messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
       }, 500);
@@ -427,12 +427,12 @@ function PopupViewModel(popupData) {
 
   this.toggle = function () {
     this.isToggled(!this.isToggled());
-    messager.send('blockbearPopup', { what: 'toggleBlockBear', tabId: popupData.tabId });
+    messager.send('fblockerPopup', { what: 'togglefblocker', tabId: popupData.tabId });
     messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
   }
   this.toggleWhitelist = function () {
     this.isWhitelisted(!this.isWhitelisted());
-    messager.send('blockbearPopup', {
+    messager.send('fblockerPopup', {
       what: 'toggleDomainWhitelist',
       url: popupData.pageURL,
       scope: '',
@@ -442,7 +442,7 @@ function PopupViewModel(popupData) {
     messager.send('popupPanel', { what: 'reloadTab', tabId: popupData.tabId });
   }
   this.toggleShowDetails = function () {
-    messager.send('blockbearPopup', { what: 'toggleShowPopupDetails' });
+    messager.send('fblockerPopup', { what: 'toggleShowPopupDetails' });
     this.setDetailsVisibility(!this.isToggleShowDetails());
   }
 

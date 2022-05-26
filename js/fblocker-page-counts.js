@@ -9,7 +9,7 @@
 /******************************************************************************/
 
 var µb = µBlock;
-var bb = µb.blockbear;
+var bb = µb.fblocker;
 
 /******************************************************************************/
 
@@ -89,14 +89,14 @@ function classifyBlockedEntry(entry, loadCounter, tries) {
   let compiled = entry.d0.compiled
   let raw = entry.d0.raw
   µb.staticFilteringReverseLookup.fromNetFilter(compiled, raw, result => {
-    let counts = µb.blockbear.getBlockedCounts(entry.tab);
+    let counts = µb.fblocker.getBlockedCounts(entry.tab);
     if (counts.pageLoadCounter !== loadCounter) {
       return;
     }
     
     if (result[raw] && result[raw].length > 0) {
       let filterListKey = result[raw][0].assetKey;
-      let category = µb.blockbear.classifyFilterList(filterListKey);
+      let category = µb.fblocker.classifyFilterList(filterListKey);
       if (category === 'ads') {
         counts.adsBlocked++;
       } else if (category === 'privacy') {
@@ -125,7 +125,7 @@ setInterval(readLogBuffer, 1500)
 
 /******************************************************************************/
 
-µb.blockbear.getBlockedCounts = function (tabId) {
+µb.fblocker.getBlockedCounts = function (tabId) {
   if (!tabsCounts.has(tabId)) {
     resetTabCounters(tabId);
   }
