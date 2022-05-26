@@ -1,0 +1,142 @@
+{
+	"extShortDesc": {
+		"message": "Простой и красивый. f5ociety Blocker вгрызается в слежку в Интернете, чтобы сделать ваш просмотр чуть более приватным.",
+		"description": ""
+	},
+	"back": {
+		"message": "Назад",
+		"description": ""
+	},
+	"on": {
+		"message": "Включить",
+		"description": ""
+	},
+	"off": {
+		"message": "Выключить",
+		"description": ""
+	},
+	"settingsTitle": {
+		"message": "f5ociety Blocker настройки",
+		"description": ""
+	},
+	"settingsBlockAds": {
+		"message": "Блокировать рекламу",
+		"description": ""
+	},
+	"settingsBlockFlash": {
+		"message": "Flash требует моего разрешения",
+		"description": ""
+	},
+	"settingsBlockBrowserFingerprinting": {
+		"message": "Блокировать отпечатки пальцев в браузере",
+		"description": ""
+	},
+	"settingsBlockEmail": {
+		"message": "Блокировать отслеживание пикселей (Gmail)",
+		"description": ""
+	},
+    "settingsBlockMicrophone": {
+		"message": "Блокировка микрофона",
+		"description": ""
+	},
+	"settingsBlockSocial": {
+		"message": "Блокировать социальные кнопки",
+		"description": ""
+	},
+	"settingsBlockKeyboard": {
+		"message": "Блокировать отслеживание клавиатуры",
+		"description": ""
+	},
+	"settingsBlockMouse": {
+		"message": "Блокировать отслеживание мыши",
+		"description": ""
+	},
+	"settingsBlockerBadgeAnimation": {
+		"message": "Анимированный значок расширения",
+		"description": ""
+	},
+	"settingsAdditionalList": {
+		"message": "Дополнительные списки блоков",
+		"description": ""
+	},
+	"settingsBlockPrivacy": {
+		"message": "Защита конфиденциальности (рекомендуется)",
+		"description": ""
+	},
+	"settingsBlockMalware": {
+		"message": "Защита от вредоносных сайтов",
+		"description": ""
+	},
+	"docblockedPrompt1": {
+		"message": "Блокировка не позволила загрузить следующую страницу:",
+		"description": "Блокировка не позволила загрузить следующую страницу:"
+	},
+	"docblockedPrompt2": {
+		"message": "Из-за следующего фильтра",
+		"description": "Из-за следующего фильтра"
+	},
+	"docblockedNoParamsPrompt": {
+		"message": "без параметров",
+		"description": "метка, которая будет использоваться для URL без параметров: https://cloud.githubusercontent.com/assets/585534/9832014/bfb1b8f0-593b-11e5-8a27-fba472a5529a.png"
+	},
+	"docblockedFoundIn": {
+		"message": "Найдено в:",
+		"description": "Список имен списков фильтров выглядит следующим образом"
+	},
+	"docblockedBack": {
+		"message": "Назад",
+		"description": "Назад"
+	},
+	"docblockedClose": {
+		"message": "Закрыть",
+		"description": "Закрыть"
+	},
+	"docblockedTitle": {
+		"message": "Страница заблокирована",
+		"description": "Страница заблокирована"
+	},
+	"whitelist": {
+		"message": "Белый лист",
+		"description": ""
+	},
+	"blacklist": {
+		"message": "Бна лист",
+		"description": ""
+	},
+	"popupBlocked": {
+		"message": "Заблокировано"
+	},
+	"ads": {
+		"message": "Реклама"
+	},
+	"flash": {
+		"message": "Flash"
+	},
+	"fingerprinting": {
+		"message": "Fingerprinting"
+	},
+	"keyboard": {
+		"message": "Клавиатура"
+	},
+	"mouse": {
+		"message": "Компьютерная мышь"
+	},
+	"microphone": {
+		"message": "Ультразвуковой"
+	},
+	"social": {
+		"message": "Социальные кнопки"
+	},
+	"privacy": {
+		"message": "Скрипты и трекеры"
+	},
+	"malware": {
+		"message": "Вредоносные сайты"
+	},
+	"email": {
+		"message": "Почта"
+	},
+	"tooltipReport": {
+		"message": "Пожаловаться"
+	}
+}
