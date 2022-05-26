@@ -100,7 +100,7 @@
 		"description": ""
 	},
 	"blacklist": {
-		"message": "Бна лист",
+		"message": "Бан лист",
 		"description": ""
 	},
 	"popupBlocked": {
@@ -122,7 +122,7 @@
 		"message": "Компьютерная мышь"
 	},
 	"microphone": {
-		"message": "Ультразвуковой"
+		"message": "Ультразвуковое отслеживание"
 	},
 	"social": {
 		"message": "Социальные кнопки"
@@ -134,7 +134,7 @@
 		"message": "Вредоносные сайты"
 	},
 	"email": {
-		"message": "Почта"
+		"message": "Почтовые трекеры"
 	},
 	"tooltipReport": {
 		"message": "Пожаловаться"
