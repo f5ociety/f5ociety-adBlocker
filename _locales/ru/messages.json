@@ -8,11 +8,11 @@
 		"description": ""
 	},
 	"on": {
-		"message": "Включить",
+		"message": "ON",
 		"description": ""
 	},
 	"off": {
-		"message": "Выключить",
+		"message": "OFF",
 		"description": ""
 	},
 	"settingsTitle": {
@@ -24,7 +24,7 @@
 		"description": ""
 	},
 	"settingsBlockFlash": {
-		"message": "Flash требует моего разрешения",
+		"message": "Flash будет требовать моего разрешения",
 		"description": ""
 	},
 	"settingsBlockBrowserFingerprinting": {
