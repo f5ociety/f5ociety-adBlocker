@@ -96,11 +96,11 @@
 		"description": "Страница заблокирована"
 	},
 	"whitelist": {
-		"message": "Белый лист",
+		"message": "Белый список",
 		"description": ""
 	},
 	"blacklist": {
-		"message": "Бан лист",
+		"message": "Черный список",
 		"description": ""
 	},
 	"popupBlocked": {
