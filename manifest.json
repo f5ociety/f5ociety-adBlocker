@@ -48,7 +48,6 @@
         }
     ],
     "minimum_chrome_version": "51.0",
-    "optional_permissions": [ "file:///*" ],
     "options_ui": {
         "page": "settings.html"
     },
